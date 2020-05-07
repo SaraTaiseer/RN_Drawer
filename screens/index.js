@@ -1,5 +1,6 @@
 import React from "react";
 import Screen from "./Screen";
+import Home from "../Components/AllProducts";
 
 export const ProfileScreen = ({ navigation }) => (
   <Screen navigation={navigation} name="Profile" />

@@ -11,11 +11,25 @@ import {
   SearchScreen,
   LogoutScreen,
 } from "./screens";
-
-const DrawerNavigator = createDrawerNavigator({
-  ProfileScreen,
-  HomeScreen,
-  SearchScreen,
-  LogoutScreen,
-});
+import SideBare from "./Components/SideBar";
+import { color } from "react-native-reanimated";
+const DrawerNavigator = createDrawerNavigator(
+  {
+    ProfileScreen: {
+      screen: ProfileScreen,
+      navigationOptions: {
+        title: "Profile",
+        drawerIcon: ({ tintColor }) => (
+          <Feather name="user" size={16} color={tintColor} />
+        ),
+      },
+    },
+    HomeScreen,
+    SearchScreen,
+    LogoutScreen,
+  },
+  {
+    contentComponent: (props) => <SideBare {...props} />,
+  }
+);
 export default createAppContainer(DrawerNavigator);

@@ -1,37 +1,22 @@
 import React, { Component } from "react";
-import { List, Content } from "native-base";
-
-import { connect } from "react-redux";
-
-import Product from "../Product/Product";
+import { List, Content, Text } from "native-base";
 
 class AllProduct extends Component {
   render() {
-    const { navigation, allproducts, user } = this.props;
-
-    const products = allproducts
-      .filter(
-        (product) =>
-          product.owner.user.id !== user.user_id && product.rented_by === null
-      )
-      .map((product) => (
-        <Product
-          key={product.name + product.id}
-          product={product}
-          navigation={navigation}
-        />
-      ));
-
     return (
       <Content>
-        <List>{products}</List>
+        <Text>;kjsdhf;asjdhf;kjsdafh;uidshf;sdjkfja</Text>
+        <Text>;kjsdhf;asjdhf;kjsdafh;uidshf;sdjkfja</Text>
+        <Text>;kjsdhf;asjdhf;kjsdafh;uidshf;sdjkfja</Text>
+        <Text>;kjsdhf;asjdhf;kjsdafh;uidshf;sdjkfja</Text>
+        <Text>;kjsdhf;asjdhf;kjsdafh;uidshf;sdjkfja</Text>
+        <Text>;kjsdhf;asjdhf;kjsdafh;uidshf;sdjkfja</Text>
+        <Text>;kjsdhf;asjdhf;kjsdafh;uidshf;sdjkfja</Text>
+        <Text>;kjsdhf;asjdhf;kjsdafh;uidshf;sdjkfja</Text>
+        <Text>;kjsdhf;asjdhf;kjsdafh;uidshf;sdjkfja</Text>
       </Content>
     );
   }
 }
-const mapStateToProps = ({ allproducts, user }) => ({
-  allproducts,
-  user,
-});
 
-export default connect(mapStateToProps)(AllProduct);
+export default AllProduct;
