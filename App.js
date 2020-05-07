@@ -1,19 +1,21 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { createAppContainer } from "react-navigation";
+import { createDrawerNavigator } from "react-navigation-drawer";
+import { Dimensions } from "react-native";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
+import { Feather } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
+import {
+  ProfileScreen,
+  HomeScreen,
+  SearchScreen,
+  LogoutScreen,
+} from "./screens";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+const DrawerNavigator = createDrawerNavigator({
+  ProfileScreen,
+  HomeScreen,
+  SearchScreen,
+  LogoutScreen,
 });
+export default createAppContainer(DrawerNavigator);
